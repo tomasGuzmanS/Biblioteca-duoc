@@ -88,7 +88,7 @@ public class LibroRepository {
         return libro1;
     }
 
-    //metodo par aeliminar un libro mediante su id
+    //metodo para eliminar un libro mediante su id
     public void eliminar(int id){
         //alternativa 1 
         libro libro = buscarPorId(id);

@@ -44,7 +44,7 @@ public class LibroController {
     
         
     @GetMapping("{id}")
-    public libro buscaLibro(@RequestParam int id) {
+    public libro buscaLibro(@PathVariable int id) {
         return libroService.getLibroId(id);
     }
 
