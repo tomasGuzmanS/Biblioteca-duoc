@@ -69,7 +69,11 @@ public class LibroController {
         return libroService.totaLibrosV2();
     }
     
-
+    @GetMapping("/buscar-isbn")
+    public libro porIsbn(@RequestParam String isbn) {
+        return libroService.porIsbn(isbn);
+    }
+    
     //comentario bkn
 
 }

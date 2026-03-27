@@ -48,8 +48,12 @@ public class LibroService {
     public int totaLibros(){
         return libroRepository.obtenerLibros().size();
     }
-    // la accion la hace el modelo
+    // la accion la hace
     public int totaLibrosV2(){
         return libroRepository.totaLibros();
+    }
+
+    public libro porIsbn(String isnb){
+        return libroRepository.porIsbn(isnb);
     }
 }
