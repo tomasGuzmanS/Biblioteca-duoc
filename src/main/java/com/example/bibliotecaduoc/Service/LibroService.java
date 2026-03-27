@@ -44,6 +44,12 @@ public class LibroService {
         return "Producto eliminado";
 
     }
-
-
+    // La accion la ace el service
+    public int totaLibros(){
+        return libroRepository.obtenerLibros().size();
+    }
+    // la accion la hace el modelo
+    public int totaLibrosV2(){
+        return libroRepository.totaLibros();
+    }
 }

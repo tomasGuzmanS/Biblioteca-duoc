@@ -135,6 +135,9 @@ public class LibroRepository {
 
     }
 
-
+    public int totaLibros(){
+        return listaLibros.size();
+    }
+    
 
 }
