@@ -56,4 +56,17 @@ public class LibroService {
     public libro porIsbn(String isnb){
         return libroRepository.porIsbn(isnb);
     }
+
+    public int cantidadLibrosPorAño(int anio){
+        return libroRepository.cantidadLibrosPorAño(anio);
+    }
+
+    public List<libro> obtenerPorAutor(String autor){
+        return libroRepository.obtenerPorAutor(autor);
+    }
+
+    public List<libro> ordenarPorAnio(){
+        return libroRepository.ordenarPorAnio();
+    }
+
 }

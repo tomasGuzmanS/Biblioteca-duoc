@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -69,11 +69,23 @@ public class LibroController {
         return libroService.totaLibrosV2();
     }
     
-    @GetMapping("/buscar-isbn")
-    public libro porIsbn(@RequestParam String isbn) {
+    @GetMapping("/isbn/{isbn}")
+    public libro porIsbn(@PathVariable String isbn) {
         return libroService.porIsbn(isbn);
     }
+    @GetMapping("/LibrosPorAño/{anio}")
+    public int cantidadLibrosPorAño(@PathVariable int anio){
+        return libroService.cantidadLibrosPorAño(anio);
+    }
     
-    //comentario bkn
+    @GetMapping("/LibrosAutor/{autor}")
+    public List<libro> obtenerPorAutor(@PathVariable String autor){
+        return libroService.obtenerPorAutor(autor);
+    }
+
+    @GetMapping("/ordenFecha")
+    public List<libro> ordenarPorAnio(){
+        return libroService.ordenarPorAnio();
+    }
 
 }

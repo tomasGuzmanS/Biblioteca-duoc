@@ -1,6 +1,7 @@
 package com.example.bibliotecaduoc.repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -139,5 +140,42 @@ public class LibroRepository {
         return listaLibros.size();
     }
     
+    public int cantidadLibrosPorAño(int anio){
+        int cont=0;
+        //for(int i= 0; i<=listaLibros.size();i++){
+        //  if(listaLibros.get(i).getFechaPublicacion() == anio ){
+        //      cont++;
+        //  }
+        //}
+        //return cont;
+        for(libro libro: listaLibros){
+            if(libro.getFechaPublicacion() == anio){
+                cont++;
+            }
+        }
+        return cont;
+    }
 
+    public List<libro> obtenerPorAutor(String autor){
+        List<libro> listaAutor = new ArrayList<>();
+
+        for(libro libro:listaLibros){
+            if(libro.getAutor().equalsIgnoreCase(autor)){
+                listaAutor.add(libro);
+            }
+        }
+        return listaAutor;
+    }
+
+    //public List<libro> ordenarPorAnio1(){
+    //  List<libro> listaOrdenada = new ArrayList<libro>();
+    //  for(libro Libro:listaLibros){
+
+    //   }
+    //}
+
+    public List<libro> ordenarPorAnio(){
+        listaLibros.sort(Comparator.comparing(libro::getFechaPublicacion).reversed()); //ordenar lista / reversed reversa la lista 
+        return listaLibros;
+    }
 }
